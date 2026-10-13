@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#1565C0">
+    <title>{% block title %}Reeshika Electronics | EV Chargers{% endblock %}</title>
+    <meta name="description" content="Reeshika Electronics - Premium EV Chargers for 2 Wheeler & 3 Wheeler. 48V, 60V, 72V. Pan-India delivery.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="container">
+        <div>
+            <span><i class="fas fa-phone"></i>+91 {{ company.phone_display }}</span>
+            <span class="hide-mobile"><i class="fas fa-envelope"></i>{{ company.email }}</span>
+            <span class="hide-mobile"><i class="fas fa-bolt"></i>Pan-India Delivery</span>
+        </div>
+        <div>
+            <a href="https://wa.me/91{{ company.whatsapp }}" target="_blank" style="color:#e3f2fd;margin-right:16px"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+91{{ company.phone }}" style="color:#e3f2fd"><i class="fas fa-phone"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="/" class="logo">
+            <div class="logo-img-wrap">
+                <img src="/static/images/logo.png" alt="Reeshika Electronics" class="logo-img"
+                     onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22white%22 rx=%2215%22/><text x=%2250%22 y=%2270%22 font-size=%2265%22 text-anchor=%22middle%22 fill=%22%231565C0%22 font-family=%22serif%22 font-weight=%22bold%22>R</text></svg>'">
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">REESHIKA</span>
+                <span class="logo-sub">ELECTRONICS</span>
+            </div>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#products">Products</a></li>
+            <li><a href="/#special">Special</a></li>
+            <li><a href="/#branches">Branches</a></li>
+            <li><a href="/#order">Order</a></li>
+            <li><a href="/#contact" class="nav-cta">Contact</a></li>
+            <li>
+                <a href="/admin/login" class="nav-admin" title="Admin Login">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+{% block content %}{% endblock %}
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div>
+            <h2>Ready to Power Your EV?</h2>
+            <p>Order now — Pan-India delivery available!</p>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="tel:+91{{ company.phone }}" class="btn btn-green"><i class="fas fa-phone"></i> Call Now</a>
+            <a href="https://wa.me/91{{ company.whatsapp }}" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <i class="fas fa-bolt"></i> REESHIKA ELECTRONICS
+                </div>
+                <p>Premium EV Chargers for Two Wheeler &amp; Three Wheeler. Trusted quality, fast charging, and reliable performance.</p>
+                <p style="color:#A5D6A7;font-weight:600;font-size:12px;margin-top:14px;">
+                    <i class="fas fa-truck"></i> Pan-India Delivery
+                </p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/#home">Home</a></li>
+                    <li><a href="/#products">Products</a></li>
+                    <li><a href="/#special">Special Products</a></li>
+                    <li><a href="/#branches">Branches</a></li>
+                    <li><a href="/#order">Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="/#products">2 Wheeler Chargers</a></li>
+                    <li><a href="/#products">3 Wheeler Chargers</a></li>
+                    <li><a href="/#special">On-Board Charger</a></li>
+                    <li><a href="/#special">50A Charger</a></li>
+                    <li><a href="/#special">EV Charger</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone" style="color:#A5D6A7;margin-right:8px;"></i>+91 {{ company.phone_display }}</p>
+                <p><i class="fas fa-envelope" style="color:#A5D6A7;margin-right:8px;"></i>{{ company.email }}</p>
+                <p><i class="fas fa-warehouse" style="color:#A5D6A7;margin-right:8px;"></i>Nellore, AP - 524314</p>
+                <p><i class="fas fa-building" style="color:#A5D6A7;margin-right:8px;"></i>Bengaluru, KA - 560070</p>
+                <p><i class="fas fa-city" style="color:#A5D6A7;margin-right:8px;"></i>New Delhi - 110043</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Reeshika Electronics. All Rights Reserved.</p>
+            <p class="dev-credit">
+                <i class="fas fa-code"></i>
+                Developed by <strong>Santhosh</strong>
+                <span class="dev-badge"><i class="fab fa-aws"></i> AWS Developer</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/91{{ company.whatsapp }}" target="_blank" class="wa-float" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+<a href="tel:+91{{ company.phone }}" class="call-float" title="Call">
+    <i class="fas fa-phone"></i>
+</a>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta-bar">
+    <a href="tel:+91{{ company.phone }}" class="mobile-cta-btn call">
+        <i class="fas fa-phone"></i><span>Call</span>
+    </a>
+    <a href="https://wa.me/91{{ company.whatsapp }}" target="_blank" class="mobile-cta-btn wa">
+        <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+    </a>
+    <a href="/#order" class="mobile-cta-btn book">
+        <i class="fas fa-shopping-cart"></i><span>Order</span>
+    </a>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

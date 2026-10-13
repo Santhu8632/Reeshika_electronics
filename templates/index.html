@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+{% block title %}Reeshika Electronics | EV Chargers for 2W & 3W{% endblock %}
+
+{% block content %}
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <span class="hero-badge">⚡ Premium EV Chargers | Pan-India Delivery</span>
+                <h1>Power Your EV With <span>Trusted Chargers.</span></h1>
+                <p class="hero-sub">High-performance EV chargers for 2 Wheeler &amp; 3 Wheeler — available in 48V, 60V &amp; 72V across multiple current ratings.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary"><i class="fas fa-bolt"></i> View Products</a>
+                    <a href="https://wa.me/91{{ company.whatsapp }}" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><h3>{{ total_products }}+</h3><p>Charger Models</p></div>
+                    <div class="stat"><h3>3</h3><p>Branches</p></div>
+                    <div class="stat"><h3>100%</h3><p>Quality Tested</p></div>
+                </div>
+            </div>
+
+            <div class="hero-form">
+                <h3>Quick Enquiry</h3>
+                <p>Get pricing &amp; details today</p>
+                <form id="quickForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                    <select name="product" required>
+                        <option value="">Select Charger Type</option>
+                        <option>2 Wheeler Charger</option>
+                        <option>3 Wheeler Charger</option>
+                        <option>On-Board Charger</option>
+                        <option>50A Charger</option>
+                        <option>EV Charger</option>
+                        <option>Other</option>
+                    </select>
+                    <textarea name="message" rows="2" placeholder="Your requirement (voltage, current, qty)"></textarea>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="trust">
+    <div class="container trust-grid">
+        <div class="trust-item"><i class="fas fa-bolt"></i><div><h4>Fast Charging</h4><p>High efficiency</p></div></div>
+        <div class="trust-item"><i class="fas fa-shield-alt"></i><div><h4>Smart Protection</h4><p>Safe &amp; reliable</p></div></div>
+        <div class="trust-item"><i class="fas fa-truck"></i><div><h4>Pan-India Delivery</h4><p>Fast shipping</p></div></div>
+        <div class="trust-item"><i class="fas fa-headset"></i><div><h4>24/7 Support</h4><p>Always available</p></div></div>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-tag">About Us</span>
+            <h2>Trusted EV Charger <span>Manufacturer</span></h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-visual">
+                <div class="about-logo-wrap">
+                    <img src="/static/images/logo.png" alt="Reeshika Electronics" class="about-logo-img"
+                         onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22white%22 rx=%2230%22/><text x=%22100%22 y=%22135%22 font-size=%22130%22 text-anchor=%22middle%22 fill=%22%231565C0%22 font-family=%22serif%22 font-weight=%22bold%22>R</text></svg>'">
+                </div>
+                <h3>Reeshika Electronics</h3>
+                <p class="role">EV Charger Specialists</p>
+            </div>
+            <div class="about-text">
+                <h2>Premium Chargers for <span>Every EV</span></h2>
+                <p><strong>Reeshika Electronics</strong> is a trusted manufacturer and supplier of high-quality EV chargers for Two Wheeler and Three Wheeler electric vehicles across India.</p>
+                <p>Our chargers are available in multiple configurations — <strong>48V, 60V and 72V</strong> — with current ratings from <strong>6A to 50A</strong>, designed for fast, safe and reliable charging.</p>
+                <div class="about-features">
+                    <div class="feature"><i class="fas fa-check"></i> Premium Build Quality</div>
+                    <div class="feature"><i class="fas fa-check"></i> Pan-India Delivery</div>
+                    <div class="feature"><i class="fas fa-check"></i> Multiple Voltage Options</div>
+                    <div class="feature"><i class="fas fa-check"></i> Direct from Manufacturer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section features-section">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-tag">Why Choose Us</span>
+            <h2>Built for <span>Performance</span></h2>
+        </div>
+        <div class="features-grid">
+            {% for f in features %}
+            <div class="feature-box">
+                <i class="fas {{ f.icon }}"></i>
+                <h3>{{ f.title }}</h3>
+                <p>{{ f.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-tag">Our Products</span>
+            <h2>Complete <span>Charger Range</span></h2>
+            <p>Choose from our wide range of EV chargers for 2 Wheeler &amp; 3 Wheeler</p>
+        </div>
+
+        <div class="product-tabs">
+            <button class="product-tab active" data-tab="two-wheeler">
+                <i class="fas fa-motorcycle"></i> 2 Wheeler
+            </button>
+            <button class="product-tab" data-tab="three-wheeler">
+                <i class="fas fa-truck-moving"></i> 3 Wheeler
+            </button>
+        </div>
+
+        <!-- 2 Wheeler -->
+        <div class="product-panel active" id="two-wheeler">
+            <div class="products-grid">
+                {% for p in two_wheeler %}
+                <div class="product-card">
+                    <span class="product-badge">2 WHEELER</span>
+                    <h3>{{ p.name }}</h3>
+                    <div class="product-specs">
+                        <span class="spec-pill">{{ p.voltage }}</span>
+                        <span class="spec-pill green">{{ p.current }}</span>
+                    </div>
+                    <p class="power"><i class="fas fa-bolt" style="color:#43A047;margin-right:5px;"></i>Power: {{ p.power }}</p>
+                    <button class="enquire-btn" data-product="{{ p.name }}">
+                        Enquire Now <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- 3 Wheeler -->
+        <div class="product-panel" id="three-wheeler">
+            <div class="products-grid">
+                {% for p in three_wheeler %}
+                <div class="product-card">
+                    <span class="product-badge w">3 WHEELER</span>
+                    <h3>{{ p.name }}</h3>
+                    <div class="product-specs">
+                        <span class="spec-pill">{{ p.voltage }}</span>
+                        <span class="spec-pill green">{{ p.current }}</span>
+                    </div>
+                    <p class="power"><i class="fas fa-bolt" style="color:#43A047;margin-right:5px;"></i>Power: {{ p.power }}</p>
+                    <button class="enquire-btn" data-product="{{ p.name }}">
+                        Enquire Now <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SPECIAL PRODUCTS ============ -->
+<section class="section special-section" id="special">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-tag">Featured</span>
+            <h2>Special <span>Products</span></h2>
+            <p>Premium chargers engineered for high performance</p>
+        </div>
+        <div class="special-grid">
+            {% for s in special %}
+            <div class="special-card">
+                <div class="special-img">
+                    <img src="{{ s.image }}" alt="{{ s.name }}"
+                         onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&h=400&fit=crop'">
+                </div>
+                <div class="special-body">
+                    <h3>{{ s.name }}</h3>
+                    <p class="sub">{{ s.subtitle }}</p>
+                    <p>{{ s.desc }}</p>
+                    <ul>
+                        {% for f in s.features %}
+                        <li><i class="fas fa-check-circle"></i> {{ f }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ============ BRANCHES ============ -->
+<section class="section" id="branches">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-tag">Our Presence</span>
+            <h2>Visit Our <span>Branches</span></h2>
+            <p>Serving customers across India from three convenient locations</p>
+        </div>
+        <div class="branches-grid">
+            {% for b in company.branches %}
+            <div class="branch-card">
+                <i class="fas {{ b.icon }} branch-icon"></i>
+                <h3>{{ b.title }}</h3>
+                <span class="city-badge">{{ b.city }}</span>
+                <p>{{ b.address }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ============ ORDER ============ -->
+<section class="order-section" id="order">
+    <div class="container order-grid">
+        <div class="order-info">
+            <span class="section-tag" style="background:rgba(165,214,167,0.15);color:#A5D6A7;border-color:rgba(165,214,167,0.3);">Order Now</span>
+            <h2>Place Your <span>Order Today</span></h2>
+            <p>Send us your requirement and we'll get back to you with pricing and delivery details.</p>
+            <div class="order-points">
+                <div class="order-point"><i class="fas fa-check-circle"></i><div><h4>Pan-India Delivery</h4><p>Fast shipping to all cities</p></div></div>
+                <div class="order-point"><i class="fas fa-check-circle"></i><div><h4>Direct from Manufacturer</h4><p>Best prices guaranteed</p></div></div>
+                <div class="order-point"><i class="fas fa-check-circle"></i><div><h4>Multiple Voltage Options</h4><p>48V, 60V, 72V available</p></div></div>
+                <div class="order-point"><i class="fas fa-check-circle"></i><div><h4>Warranty Support</h4><p>Quality assured products</p></div></div>
+            </div>
+        </div>
+        <div class="order-form">
+            <h3><i class="fas fa-shopping-cart" style="color:#43A047;margin-right:8px;"></i>Order Form</h3>
+            <form id="orderForm">
+                <div class="form-row">
+                    <div class="form-group"><label>Full Name *</label><input type="text" name="name" required placeholder="Your name"></div>
+                    <div class="form-group"><label>Phone *</label><input type="tel" name="phone" required placeholder="10-digit mobile"></div>
+                </div>
+                <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com"></div>
+                <div class="form-group">
+                    <label>Product Required *</label>
+                    <select name="product" required>
+                        <option value="">Select Product</option>
+                        <optgroup label="2 Wheeler">
+                            {% for p in two_wheeler %}
+                            <option>{{ p.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="3 Wheeler">
+                            {% for p in three_wheeler %}
+                            <option>{{ p.name }}</option>
+                            {% endfor %}
+                        </optgroup>
+                        <optgroup label="Special">
+                            <option>On-Board Charger</option>
+                            <option>50A Charger</option>
+                            <option>EV Charger</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Quantity *</label><input type="number" name="quantity" min="1" value="1" required></div>
+                    <div class="form-group">
+                        <label>Preferred Branch</label>
+                        <select name="branch">
+                            <option>Nellore (AP)</option>
+                            <option>Bengaluru (KA)</option>
+                            <option>New Delhi (DL)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group"><label>Delivery Address</label><input type="text" name="address" placeholder="Full delivery address"></div>
+                <div class="form-group"><label>Additional Notes</label><textarea name="notes" rows="2" placeholder="Any special requirements..."></textarea></div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-shopping-cart"></i> Place Order
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-tag">Get in Touch</span>
+            <h2>Contact <span>Us</span></h2>
+        </div>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+91{{ company.phone }}">+91 {{ company.phone_display }}</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div><h4>WhatsApp</h4><p><a href="https://wa.me/91{{ company.whatsapp }}" target="_blank">+91 {{ company.phone_display }}</a></p></div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div><h4>Email</h4><p><a href="mailto:{{ company.email }}">{{ company.email }}</a></p></div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div><h4>Working Hours</h4><p>{{ company.working_hours }}</p></div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <div>
+                        <h4>Head Office</h4>
+                        <p>Ravuru Village, Indukurpet Mandal, SPSR Nellore, AP - 524314</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-wrapper">
+                <iframe src="{{ company.map_embed }}" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
